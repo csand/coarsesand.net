@@ -1,0 +1,10 @@
+{
+  "name": "coarsesand-net",
+  "version": "0.0.0",
+  "dependencies": {
+    "normalize-css": "~2.1.0",
+    "require-css": "latest",
+    "requirejs-plugins": "latest",
+    "require": "~2.1.2"
+  }
+}

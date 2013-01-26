@@ -1,0 +1,82 @@
+$color1: hsl(283, 47%, 15%);
+$color2: hsl(259, 39%, 35%);
+$color3: hsl(225, 28%, 55%);
+$color4: hsl(147, 19%, 75%);
+$color5: hsl(51, 8%, 93%);
+
+$backgroundColor: $color1;
+$textColor: $color5;
+$unvisitedLink: $color3;
+$visitedLink: $color2;
+
+$marginSize: 70px;
+
+@function brighten($color, $light, $saturation) {
+  $temp: lighten($color, $light);
+  @return saturate($temp, $saturation);
+}
+
+body {
+  background-color: $backgroundColor;
+  color: $textColor;
+  font-family: Molengo, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: $unvisitedLink;
+  text-decoration: none;
+  @include transition(all .8s ease-out);
+  &:hover {
+    color: brighten($unvisitedLink, 20, 40);
+    text-shadow: $unvisitedLink 0 0 5px;
+  }
+  &:visited {
+    color: $visitedLink;
+  }
+  &:visited:hover {
+    color: brighten($visitedLink, 20, 30);
+    text-shadow: darken($visitedLink, 40) 0 0 5px;
+  }
+}
+
+.container {
+  margin-top: $marginSize * 0.9;
+  margin-left: $marginSize;
+  width: 960px;
+}
+
+.sidebar {
+  float: left;
+  width: 160px;
+  .links {
+    margin: 10px;
+    padding-left: 0;
+    list-style-type: none;
+  }
+}
+
+.content {
+  float: left;
+  width: 520px;
+  margin-left: 20px;
+  text-align: justify;
+  p {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+}
+
+// Animations
+.fade-in {
+  @include animation(fadein 1.5s);
+}
+
+@include keyframes(fadein) {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}

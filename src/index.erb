@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome - coarsesand.net</title>
+  <link rel="stylesheet" href="screen.css" />
+  <script src="require.js"></script>
+  <script src="require_config.js"></script>
+</head>
+<body>
+  <div class="container fade-in">
+    <section class="sidebar">
+      <h2>Links</h2>
+      <ul class="links">
+        <li>
+          <a href="mailto:contact@coarsesand.net">Email</a>
+        </li>
+        <li>
+          <a href="http://github.com/coarsesand">GitHub</a>
+        </li>
+      </ul>
+    </section>
+    <section class="content">
+      <%= yield %>
+    </section>
+  </div>
+</body>
+</html>

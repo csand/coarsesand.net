@@ -1,0 +1,6 @@
+.DS_Store
+.sass-cache
+components
+build
+lib
+deploy.zip
